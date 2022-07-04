@@ -1,0 +1,35 @@
+{
+	"@timestamp" : 1656955944075,
+		"env" : {
+			"RuntimeVersion": "2.5.0-alpha2",
+			"RuntimeCommit": "ebacd986bba97ab154c706e839dea454ad41e3d8",
+			"RuntimeConfig": "/etc/kata-containers/configuration.toml",
+			"Hypervisor": "/usr/bin/qemu-system-x86_64",
+			"HypervisorVersion": "QEMU emulator version 6.2.0 (kata-static)",
+			"Shim": "/usr/local/bin/containerd-shim-kata-v2",
+			"ShimVersion": "2.5.0-alpha2",
+			"machinename": "neo-server"
+		},
+	"date" : {
+		"ns": 1656955944088107603,
+		"Date": "2022-07-04T17:32:24.100"
+	},
+	"test" : {
+		"runtime": "io.containerd.kata.v2",
+		"testname": "network-iperf3"
+	},
+"network-iperf3" : {
+	"Results": [
+			{
+		"bandwidth": {
+			"Result" : 23508343559.501,
+			"Units" : "bits per second"
+		},
+		"jitter": {
+			"Result" : 0.002,
+			"Units" : "ms"
+		}
+	}
+	]
+	}
+}
