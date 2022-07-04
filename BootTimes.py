@@ -3,7 +3,7 @@ from pathlib import Path
 import json
 import csv
 
-from test_infor import TestInfor, Elem
+from TestInfor import TestInfor, Elem
 
 class Result:
     def __init__(self):

@@ -2,8 +2,7 @@ from pathlib import Path
 import json
 import csv
 
-from test_infor import TestInfor, Elem, ConfigList
-
+from TestInfor import TestInfor, Elem, ConfigList
 
 class Result:
     def __init__(self):
