@@ -1,0 +1,465 @@
+{
+	"@timestamp" : 1656409656619,
+		"env" : {
+			"RuntimeVersion": "2.5.0-alpha2",
+			"RuntimeCommit": "ebacd986bba97ab154c706e839dea454ad41e3d8",
+			"RuntimeConfig": "/etc/kata-containers/configuration.toml",
+			"Hypervisor": "/usr/bin/qemu-system-x86_64",
+			"HypervisorVersion": "QEMU emulator version 6.2.0 (kata-static)",
+			"Shim": "/usr/local/bin/containerd-shim-kata-v2",
+			"ShimVersion": "2.5.0-alpha2",
+			"machinename": "neo-server"
+		},
+	"date" : {
+		"ns": 1656409656632389890,
+		"Date": "2022-06-28T09:47:36.645"
+	},
+	"test" : {
+		"runtime": "io.containerd.kata.v2",
+		"testname": "boot times"
+	},
+"boot-times" : {
+	"Results": [
+			{
+		"total": {
+			"Result": 1.130,
+			"Units" : "s"
+		},
+		"to-workload": {
+			"Result": 1.007,
+			"Units" : "s"
+		},
+		"in-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-quit": {
+			"Result": 0.122,
+			"Units" : "s"
+		}
+	},
+	{
+		"total": {
+			"Result": 0.934,
+			"Units" : "s"
+		},
+		"to-workload": {
+			"Result": 0.848,
+			"Units" : "s"
+		},
+		"in-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-quit": {
+			"Result": 0.085,
+			"Units" : "s"
+		}
+	},
+	{
+		"total": {
+			"Result": 0.902,
+			"Units" : "s"
+		},
+		"to-workload": {
+			"Result": 0.821,
+			"Units" : "s"
+		},
+		"in-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-quit": {
+			"Result": 0.081,
+			"Units" : "s"
+		}
+	},
+	{
+		"total": {
+			"Result": 0.900,
+			"Units" : "s"
+		},
+		"to-workload": {
+			"Result": 0.289,
+			"Units" : "s"
+		},
+		"in-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-quit": {
+			"Result": 0.611,
+			"Units" : "s"
+		}
+	},
+	{
+		"total": {
+			"Result": 0.835,
+			"Units" : "s"
+		},
+		"to-workload": {
+			"Result": 0.755,
+			"Units" : "s"
+		},
+		"in-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-quit": {
+			"Result": 0.080,
+			"Units" : "s"
+		}
+	},
+	{
+		"total": {
+			"Result": 0.880,
+			"Units" : "s"
+		},
+		"to-workload": {
+			"Result": 0.441,
+			"Units" : "s"
+		},
+		"in-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-quit": {
+			"Result": 0.438,
+			"Units" : "s"
+		}
+	},
+	{
+		"total": {
+			"Result": 0.919,
+			"Units" : "s"
+		},
+		"to-workload": {
+			"Result": 0.830,
+			"Units" : "s"
+		},
+		"in-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-quit": {
+			"Result": 0.088,
+			"Units" : "s"
+		}
+	},
+	{
+		"total": {
+			"Result": 0.905,
+			"Units" : "s"
+		},
+		"to-workload": {
+			"Result": 0.822,
+			"Units" : "s"
+		},
+		"in-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-quit": {
+			"Result": 0.083,
+			"Units" : "s"
+		}
+	},
+	{
+		"total": {
+			"Result": 0.839,
+			"Units" : "s"
+		},
+		"to-workload": {
+			"Result": 0.755,
+			"Units" : "s"
+		},
+		"in-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-quit": {
+			"Result": 0.084,
+			"Units" : "s"
+		}
+	},
+	{
+		"total": {
+			"Result": 0.875,
+			"Units" : "s"
+		},
+		"to-workload": {
+			"Result": 0.790,
+			"Units" : "s"
+		},
+		"in-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-quit": {
+			"Result": 0.085,
+			"Units" : "s"
+		}
+	},
+	{
+		"total": {
+			"Result": 0.865,
+			"Units" : "s"
+		},
+		"to-workload": {
+			"Result": 0.783,
+			"Units" : "s"
+		},
+		"in-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-quit": {
+			"Result": 0.081,
+			"Units" : "s"
+		}
+	},
+	{
+		"total": {
+			"Result": 0.902,
+			"Units" : "s"
+		},
+		"to-workload": {
+			"Result": -0.077,
+			"Units" : "s"
+		},
+		"in-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-quit": {
+			"Result": 0.980,
+			"Units" : "s"
+		}
+	},
+	{
+		"total": {
+			"Result": 0.904,
+			"Units" : "s"
+		},
+		"to-workload": {
+			"Result": 0.820,
+			"Units" : "s"
+		},
+		"in-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-quit": {
+			"Result": 0.084,
+			"Units" : "s"
+		}
+	},
+	{
+		"total": {
+			"Result": 0.850,
+			"Units" : "s"
+		},
+		"to-workload": {
+			"Result": 0.763,
+			"Units" : "s"
+		},
+		"in-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-quit": {
+			"Result": 0.087,
+			"Units" : "s"
+		}
+	},
+	{
+		"total": {
+			"Result": 0.878,
+			"Units" : "s"
+		},
+		"to-workload": {
+			"Result": 0.790,
+			"Units" : "s"
+		},
+		"in-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-quit": {
+			"Result": 0.087,
+			"Units" : "s"
+		}
+	},
+	{
+		"total": {
+			"Result": 0.855,
+			"Units" : "s"
+		},
+		"to-workload": {
+			"Result": 0.779,
+			"Units" : "s"
+		},
+		"in-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-quit": {
+			"Result": 0.076,
+			"Units" : "s"
+		}
+	},
+	{
+		"total": {
+			"Result": 0.852,
+			"Units" : "s"
+		},
+		"to-workload": {
+			"Result": 0.768,
+			"Units" : "s"
+		},
+		"in-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-quit": {
+			"Result": 0.083,
+			"Units" : "s"
+		}
+	},
+	{
+		"total": {
+			"Result": 0.871,
+			"Units" : "s"
+		},
+		"to-workload": {
+			"Result": 0.788,
+			"Units" : "s"
+		},
+		"in-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-quit": {
+			"Result": 0.083,
+			"Units" : "s"
+		}
+	},
+	{
+		"total": {
+			"Result": 0.884,
+			"Units" : "s"
+		},
+		"to-workload": {
+			"Result": 0.802,
+			"Units" : "s"
+		},
+		"in-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-quit": {
+			"Result": 0.082,
+			"Units" : "s"
+		}
+	},
+	{
+		"total": {
+			"Result": 0.853,
+			"Units" : "s"
+		},
+		"to-workload": {
+			"Result": 0.773,
+			"Units" : "s"
+		},
+		"in-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-kernel": {
+			"Result": 0.0,
+			"Units" : "s"
+		},
+		"to-quit": {
+			"Result": 0.079,
+			"Units" : "s"
+		}
+	}
+	]
+	}
+}

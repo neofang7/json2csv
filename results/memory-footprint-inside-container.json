@@ -1,0 +1,43 @@
+{
+	"@timestamp" : 1656409641593,
+		"env" : {
+			"RuntimeVersion": "2.5.0-alpha2",
+			"RuntimeCommit": "ebacd986bba97ab154c706e839dea454ad41e3d8",
+			"RuntimeConfig": "/etc/kata-containers/configuration.toml",
+			"Hypervisor": "/usr/bin/qemu-system-x86_64",
+			"HypervisorVersion": "QEMU emulator version 6.2.0 (kata-static)",
+			"Shim": "/usr/local/bin/containerd-shim-kata-v2",
+			"ShimVersion": "2.5.0-alpha2",
+			"machinename": "neo-server"
+		},
+	"date" : {
+		"ns": 1656409641605972832,
+		"Date": "2022-06-28T09:47:21.618"
+	},
+	"test" : {
+		"runtime": "io.containerd.kata.v2",
+		"testname": "memory footprint inside container"
+	},
+"memory-footprint-inside-container" : {
+	"Results": [
+			{
+		"memrequest": {
+			"Result" : 2097152,
+			"Units"  : "Kb"
+		},
+		"memtotal": {
+			"Result" : 4133740,
+			"Units"  : "kB"
+		},
+		"memfree": {
+			"Result" : 4068196,
+			"Units"  : "kB"
+		},
+		"memavailable": {
+			"Result" : 4030012,
+			"Units"  : "kB"
+		}
+	}
+	]
+	}
+}

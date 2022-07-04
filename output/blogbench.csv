@@ -1,0 +1,16 @@
+Env,Value
+RuntimeVersion,2.5.0-alpha2
+RuntimeCommit,ebacd986bba97ab154c706e839dea454ad41e3d8
+RuntimeConfig,/etc/kata-containers/configuration.toml
+Hypervisor,/usr/bin/qemu-system-x86_64
+HypervisorVersion,QEMU emulator version 6.2.0 (kata-static)
+Shim,/usr/local/bin/containerd-shim-kata-v2
+ShimVersion,2.5.0-alpha2
+machinename,neo-server
+Date,2022-06-28T09:42:12.822
+runtime,io.containerd.kata.v2
+testname,blogbench
+Frequency,Iterations,Number of spawing writers,Number of spawing rewriters,Number of spawing commenters,Number of spawing readers
+10,30,3,1,5,100
+write,read
+852items,51830items

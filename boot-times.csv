@@ -1,0 +1,33 @@
+Env,Value
+RuntimeVersion,2.5.0-alpha2
+RuntimeCommit,ebacd986bba97ab154c706e839dea454ad41e3d8
+RuntimeConfig,/etc/kata-containers/configuration.toml
+Hypervisor,/usr/bin/qemu-system-x86_64
+HypervisorVersion,QEMU emulator version 6.2.0 (kata-static)
+Shim,/usr/local/bin/containerd-shim-kata-v2
+ShimVersion,2.5.0-alpha2
+machinename,neo-server
+Date,2022-06-28T09:47:36.645
+runtime,io.containerd.kata.v2
+testname,boot times
+total,to-workload,in-kernel,to-kernel,to-quit
+1.13s,1.007s,0.0s,0.0s,0.122s
+0.934s,0.848s,0.0s,0.0s,0.085s
+0.902s,0.821s,0.0s,0.0s,0.081s
+0.9s,0.289s,0.0s,0.0s,0.611s
+0.835s,0.755s,0.0s,0.0s,0.08s
+0.88s,0.441s,0.0s,0.0s,0.438s
+0.919s,0.83s,0.0s,0.0s,0.088s
+0.905s,0.822s,0.0s,0.0s,0.083s
+0.839s,0.755s,0.0s,0.0s,0.084s
+0.875s,0.79s,0.0s,0.0s,0.085s
+0.865s,0.783s,0.0s,0.0s,0.081s
+0.902s,-0.077s,0.0s,0.0s,0.98s
+0.904s,0.82s,0.0s,0.0s,0.084s
+0.85s,0.763s,0.0s,0.0s,0.087s
+0.878s,0.79s,0.0s,0.0s,0.087s
+0.855s,0.779s,0.0s,0.0s,0.076s
+0.852s,0.768s,0.0s,0.0s,0.083s
+0.871s,0.788s,0.0s,0.0s,0.083s
+0.884s,0.802s,0.0s,0.0s,0.082s
+0.853s,0.773s,0.0s,0.0s,0.079s
