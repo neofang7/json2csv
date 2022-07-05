@@ -99,8 +99,8 @@ class BootTimes:
         for i in self.Results:
             i.print_myself()
         
-
-boot_times = BootTimes()
-boot_times.load_from_jsonfile('results/boot-times.json')
-boot_times.to_csv('output/boot-times.csv')
-print("boot-times.csv generated.")
+    def test():
+        boot_times = BootTimes()
+        boot_times.load_from_jsonfile('results/boot-times.json')
+        boot_times.to_csv('output/boot-times.csv')
+        print("boot-times.csv generated.")

@@ -45,7 +45,8 @@ class Blogbench:
                                 str(i.read.Result) + i.read.Units])
         return
 
-blogbench = Blogbench()
-blogbench.load_from_jsonfile('results/blogbench.json')
-blogbench.to_csv('output/blogbench.csv')
-print('blogbench.csv generated.')
+    def test():
+        blogbench = Blogbench()
+        blogbench.load_from_jsonfile('results/blogbench.json')
+        blogbench.to_csv('output/blogbench.csv')
+        print('blogbench.csv generated.')

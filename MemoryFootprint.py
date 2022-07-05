@@ -65,7 +65,8 @@ class MemoryFootprint:
         return
 
 
-memory_footprint = MemoryFootprint()
-memory_footprint.load_from_jsonfile('results/memory-footprint.json')
-memory_footprint.to_csv('output/memory-footprint.csv')
-print('memory-footprint.csv generated.')
+    def test():
+        memory_footprint = MemoryFootprint()
+        memory_footprint.load_from_jsonfile('results/memory-footprint.json')
+        memory_footprint.to_csv('output/memory-footprint.csv')
+        print('memory-footprint.csv generated.')
