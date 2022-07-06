@@ -34,26 +34,63 @@ class MetricsCase:
 
         self.Results = json_dict['Results']
 
-        for d in self.Results:
-            row = []
-            for i in d.keys():
-                row.append(str(d[i]['Result']) + d[i]['Units'])
-            print(row)
+        # for d in self.Results:
+        #     row = []
+        #     for i in d.keys():
+        #         if 'Units' not in d[i].keys():
+        #             row.append(str(d[i]['Result']))
+        #         else:
+        #             row.append(str(d[i]['Result']) + d[i]['Units'])
+        #     print(row)
 
         return
 
     def to_csv(self, file_name):
-        with open(file_name, 'a') as csv_file:
+        # with open(file_name, 'a') as csv_file:
+        #     writer = csv.writer(csv_file)
+        #     self.TestInfor.write_to_csv(writer)
+        #     if self.Configs != None:
+        #         self.Configs.write_to_csv(writer)
+
+        #     # write label:
+        #     writer.writerow(self.Results[0].keys())
+        #     # write contents:
+        #     for d in self.Results:
+        #         row = []
+        #         for i in d.keys():
+        #             if 'Units' not in d[i].keys():
+        #                 row.append(str(d[i]['Result']))
+        #             else:
+        #                 row.append(str(d[i]['Result']) + d[i]['Units'])
+        #         writer.writerow(row)
+        self.to_csv_with_labels(file_name, None)
+
+    def to_csv_with_labels(self, file_name, labels):
+         with open(file_name, 'a') as csv_file:
             writer = csv.writer(csv_file)
             self.TestInfor.write_to_csv(writer)
             if self.Configs != None:
                 self.Configs.write_to_csv(writer)
 
             # write label:
-            writer.writerow(self.Results[0].keys())
+            label_line = []
+            if labels != None:
+                for l in self.Results[0].keys():
+                    if l in labels:
+                        label_line.append(l)
+            else:
+                 label_line = self.Results[0].keys()   
+            writer.writerow(label_line)
             # write contents:
             for d in self.Results:
                 row = []
                 for i in d.keys():
-                    row.append(str(d[i]['Result']) + d[i]['Units'])
+                    if labels is not None and i not in labels:
+                        continue
+                    if 'Units' not in d[i].keys():
+                        row.append(str(d[i]['Result']))
+                    else:
+                        row.append(str(d[i]['Result']) + d[i]['Units'])
                 writer.writerow(row)
+
+       
