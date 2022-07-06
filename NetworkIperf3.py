@@ -8,10 +8,10 @@ from TestInfor import TestInfor, Elem
 
 class Result:
     def __init__(self):
-        # self.bandwidth = Elem('bandwidth')
-        # self.jitter = Elem('jitter')
-        self.items = []
-        self.item_keys = []
+        self.bandwidth = Elem('bandwidth')
+        self.jitter = Elem('jitter')
+        # self.items = []
+        # self.item_keys = []
 
 
 class NetworkIperf3:
@@ -29,7 +29,7 @@ class NetworkIperf3:
         self.load_from_dict(data[testname])
         return
 
-    def load_from_dict(self, json_dict, item_keys):
+    def load_from_dict(self, json_dict):
         # fetch config
         if self.Configs != None:
             self.Configs.load_from_dict(json_dict['Config'])
@@ -40,15 +40,10 @@ class NetworkIperf3:
         # fetch results
         for i in json_dict['Results']:
             res = Result()
-            for k in i.keys():
-                res.item_keys.append(k)
-                item = Elem()
-                item.Result = i[k]['Result']
-                item.Units = i[k]['Units']
-            # res.bandwidth.Result = i['bandwidth']['Result']
-            # res.bandwidth.Units = i['bandwidth']['Units']
-            # res.jitter.Result = i['jitter']['Result']
-            # res.jitter.Units = i['jitter']['Units']
+            res.bandwidth.Result = i['bandwidth']['Result']
+            res.bandwidth.Units = i['bandwidth']['Units']
+            res.jitter.Result = i['jitter']['Result']
+            res.jitter.Units = i['jitter']['Units']
             self.Results.append(res)
         return
 

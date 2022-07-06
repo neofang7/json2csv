@@ -5,8 +5,8 @@ import types
 from MemoryFootprint import MemoryFootprint
 from Blogbench import Blogbench
 from BootTimes import BootTimes
-#from NetworkIperf3 import NetworkIperf3
-
+from NetworkIperf3 import NetworkIperf3
+from MemoryFootprintInsideContainer import MemoryFootprintInsideContainer
 
 def filename_to_classname(file_name, postfix):
     #remove .py
