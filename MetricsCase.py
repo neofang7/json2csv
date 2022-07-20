@@ -29,7 +29,8 @@ class MetricsCase:
             self.Configs = ConfigList()
             self.Configs.load_from_dict(json_dict['Config'])
 
-        if len(json_dict['Results']) == 0:
+        if 'Results' not in json_dict.keys() == 0:
+            print(json_dict.keys())
             return
 
         self.Results = json_dict['Results']
