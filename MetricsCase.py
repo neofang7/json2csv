@@ -64,10 +64,11 @@ class MetricsCase:
         #             else:
         #                 row.append(str(d[i]['Result']) + d[i]['Units'])
         #         writer.writerow(row)
-        self.to_csv_with_labels(file_name, None)
+        #self.to_csv_with_labels(file_name, None)
+        self.to_csv_vertical(file_name)
 
     def to_csv_with_labels(self, file_name, labels):
-         with open(file_name, 'a') as csv_file:
+        with open(file_name, 'w') as csv_file:
             writer = csv.writer(csv_file)
             self.TestInfor.write_to_csv(writer)
             if self.Configs != None:
@@ -80,7 +81,7 @@ class MetricsCase:
                     if l in labels:
                         label_line.append(l)
             else:
-                 label_line = self.Results[0].keys()   
+                label_line = self.Results[0].keys()
             writer.writerow(label_line)
             # write contents:
             for d in self.Results:
@@ -94,4 +95,61 @@ class MetricsCase:
                         row.append(str(d[i]['Result']) + d[i]['Units'])
                 writer.writerow(row)
 
-       
+    def to_csv_vertical(self, file_name):
+        with open(file_name, 'w') as csv_file:
+            writer = csv.writer(csv_file)
+            self.TestInfor.write_to_csv(writer)
+            if self.Configs != None:
+                self.Configs.write_to_csv(writer)
+
+            label_line = ['Item', 'Result', 'Units']
+            writer.writerow(label_line)
+
+            # for r in self.Results:
+            # TODO we need to calc average here.
+            r = self.Results[0]
+
+            for i in r.keys():
+                row = [i]
+                row.append(str(r[i]['Result']))
+                row.append(r[i]['Units'])
+                writer.writerow(row)
+
+    def to_csv_with_labels_vertical(self, file_name, labels):
+        with open(file_name, 'w') as csv_file:
+            writer = csv.writer(csv_file)
+            self.TestInfor.write_to_csv(writer)
+            if self.Configs != None:
+                self.Configs.write_to_csv(writer)
+
+            # write label:
+            writer.writerow(['Item', 'Result', 'Units'])
+
+            for r in self.Results:
+                for l in labels:
+                    if l in r.keys():
+                        row = []
+                        row.append(l)
+                        row.append(str(r[l]['Result']))
+                        row.append(r[l]['Units'])
+                        writer.writerow(row)
+
+            # if labels != None:
+            #     for l in self.Results[0].keys():
+            #         if l in labels:
+            #             label_line.append(l)
+            # else:
+            #      label_line = self.Results[0].keys()
+            # #writer.writerow(label_line)
+            # # write contents:
+
+            # for d in self.Results:
+            #     row = []
+            #     for i in d.keys():
+            #         if labels is not None and i not in labels:
+            #             continue
+            #         if 'Units' not in d[i].keys():
+            #             row.append(str(d[i]['Result']))
+            #         else:
+            #             row.append(str(d[i]['Result']) + d[i]['Units'])
+            #     writer.writerow(row)

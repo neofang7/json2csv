@@ -8,4 +8,4 @@ class Blogbench:
         self.MetricsCase.load_from_jsonfile(file_name, 'blogbench')
         
     def to_csv(self, file_name):
-        self.MetricsCase.to_csv_with_labels(file_name, ['write', 'read'])
+        self.MetricsCase.to_csv_with_labels_vertical(file_name, ['write', 'read'])
