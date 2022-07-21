@@ -22,7 +22,7 @@ def write_info_to_pdf(csv_file, pdf):
         pdf.ln(th)
         col_width = page_width/3
         for line in contents:
-            if line[0] == "Container":
+            if line[0] == "Cases":
                 break
             pdf.cell(col_width, th, line[0], border=0)
             pdf.cell(col_width, th, line[1], border=0)
@@ -42,7 +42,7 @@ def write_to_pdf(csv_file, head, pdf):
 
         start = 0
         for line in contents:
-            if line[0] == "Container":
+            if line[0] == "Cases":
                 break
             start = start + 1
 

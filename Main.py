@@ -10,6 +10,7 @@ from MemoryFootprintInsideContainer import MemoryFootprintInsideContainer
 from MemoryFootprintKsm import MemoryFootprintKsm
 from Mlc import Mlc
 
+
 def filename_to_classname(file_name, postfix):
     #remove .py
     #file_name = file_name[:-3]
@@ -23,11 +24,12 @@ def filename_to_classname(file_name, postfix):
 if __name__ == '__main__':
     # parse folder and get the generated json files.
     args = sys.argv[1:]
+    result_path = args[0]
+    output_path = './output/'
 
+    if not os.path.exists(output_path):
+        os.mkdir(output_path)
     for root, dirs, files in os.walk(args[0]):
-        print(files)
-        print(root)
-
         for f in files:
             #class_type = (globals()['BootTimes'])
             class_name = filename_to_classname(f, '.json')
@@ -37,4 +39,4 @@ if __name__ == '__main__':
             class_type = globals()[class_name]
             obj = class_type()
             obj.load_from_jsonfile(root+'/'+f)
-            obj.to_csv('output/'+f[:-5]+'.csv')
+            obj.to_csv(output_path+f[:-5]+'.csv')
