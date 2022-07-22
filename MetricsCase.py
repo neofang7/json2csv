@@ -106,8 +106,8 @@ class MetricsCase:
             writer.writerow(label_line)
 
             # for r in self.Results:
-            # TODO we need to calc average here.
             r = self.Results[0]
+            print(len(self.Results))
 
             for i in r.keys():
                 row = [i]
