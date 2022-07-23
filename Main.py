@@ -9,7 +9,7 @@ from NetworkIperf3 import NetworkIperf3
 from MemoryFootprintInsideContainer import MemoryFootprintInsideContainer
 from MemoryFootprintKsm import MemoryFootprintKsm
 from Mlc import Mlc
-
+from MlcFull import MlcFull
 
 def filename_to_classname(file_name, postfix):
     #remove .py

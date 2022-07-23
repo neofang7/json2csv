@@ -30,7 +30,7 @@ def write_info_to_pdf(csv_file, pdf):
 
 
 def write_to_pdf(csv_file, head, pdf):
-    with open(csv_file) as f:
+    with open(csv_file, 'r') as f:
         contents = list(csv.reader(f))
         page_width = pdf.w - 2*pdf.l_margin
         pdf.set_font('Times', 'B', 14.0)
@@ -46,12 +46,24 @@ def write_to_pdf(csv_file, head, pdf):
                 break
             start = start + 1
 
-        # pdf.ln(1)
+        pdf.set_font('Courier', 'B', 13)
         th = pdf.font_size
-        for idx in range(start, len(contents)):
+        row = contents[start]
+        for i in row:
+            pdf.cell(col_width, th, i, border=1)
+        pdf.ln(th)
+
+        for idx in range(start+1, len(contents)):
+            pdf.set_font('Courier', 'B', 12)
+            th = pdf.font_size
             row = contents[idx]
-            for i in row:
-                pdf.cell(col_width, th, i, border=1)
+            # set cell format for row[0]
+            pdf.cell(col_width, th, row[0], border=1)
+            # pdf.ln(th)
+            for j in range(1, len(row)):
+                pdf.set_font('Courier', '', 12)
+                th = pdf.font_size
+                pdf.cell(col_width, th, row[j], border=1)
             pdf.ln(th)
 
     pdf.ln(10)
@@ -74,5 +86,6 @@ if __name__ == '__main__':
                  'Memory Footprint KSM', pdf)
     pdf.add_page()
     write_to_pdf('merge-output/mlc.csv', 'MLC', pdf)
+    write_to_pdf('merge-output/mlc-full.csv', 'MLC Full', pdf)
 
-    pdf.output('test.pdf', 'F')
+    pdf.output('Metrics_Test_Report.pdf', 'F')
