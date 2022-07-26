@@ -38,5 +38,5 @@ if __name__ == '__main__':
                 continue
             class_type = globals()[class_name]
             obj = class_type()
-            obj.load_from_jsonfile(root+'/'+f)
-            obj.to_csv(output_path+f[:-5]+'.csv')
+            if obj.load_from_jsonfile(root+'/'+f) == 0:
+                obj.to_csv(output_path+f[:-5]+'.csv')

@@ -18,11 +18,15 @@ class MetricsCase:
     def load_from_jsonfile(self, file_name, result_label):
         json_path = Path(file_name)
         with json_path.open('r', encoding='utf-8') as data_f:
-            data = json.loads(data_f.read())
+            try:
+                data = json.loads(data_f.read())
+            except ValueError:
+                print("Decoding json failure.")
+                return -1
         self.TestInfor.load_from_dict(data)
 
         self.load_from_dict(data[result_label])
-        return
+        return 0
 
     def load_from_dict(self, json_dict):
         if 'Config' in json_dict.keys():
