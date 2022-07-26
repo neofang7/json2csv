@@ -30,41 +30,45 @@ def write_info_to_pdf(csv_file, pdf):
 
 
 def write_to_pdf(csv_file, head, pdf):
-    with open(csv_file, 'r') as f:
-        contents = list(csv.reader(f))
-        page_width = pdf.w - 2*pdf.l_margin
-        pdf.set_font('Times', 'B', 14.0)
-        pdf.cell(page_width, 0.0, head, align='C')
-        pdf.ln(10)
+    try:
+        f = open(csv_file, 'r')
+    except FileNotFoundError as e:
+        print("Ign: No such firle or directory: {}.".format(csv_file))
+        return
+    contents = list(csv.reader(f))
+    page_width = pdf.w - 2*pdf.l_margin
+    pdf.set_font('Times', 'B', 14.0)
+    pdf.cell(page_width, 0.0, head, align='C')
+    pdf.ln(10)
 
-        pdf.set_font('Courier', '', 12)
-        col_width = page_width/4
+    pdf.set_font('Courier', '', 12)
+    col_width = page_width/4
 
-        start = 0
-        for line in contents:
-            if line[0] == "Cases":
-                break
-            start = start + 1
+    start = 0
+    for line in contents:
+        if line[0] == "Cases":
+            break
+        start = start + 1
 
-        pdf.set_font('Courier', 'B', 13)
+    pdf.set_font('Courier', 'B', 13)
+    th = pdf.font_size
+    row = contents[start]
+    for i in row:
+        pdf.cell(col_width, th, i, border=1)
+    pdf.ln(th)
+
+    for idx in range(start+1, len(contents)):
+        pdf.set_font('Courier', 'B', 12)
         th = pdf.font_size
-        row = contents[start]
-        for i in row:
-            pdf.cell(col_width, th, i, border=1)
-        pdf.ln(th)
-
-        for idx in range(start+1, len(contents)):
-            pdf.set_font('Courier', 'B', 12)
+        row = contents[idx]
+        # set cell format for row[0]
+        pdf.cell(col_width, th, row[0], border=1)
+        # pdf.ln(th)
+        for j in range(1, len(row)):
+            pdf.set_font('Courier', '', 12)
             th = pdf.font_size
-            row = contents[idx]
-            # set cell format for row[0]
-            pdf.cell(col_width, th, row[0], border=1)
-            # pdf.ln(th)
-            for j in range(1, len(row)):
-                pdf.set_font('Courier', '', 12)
-                th = pdf.font_size
-                pdf.cell(col_width, th, row[j], border=1)
-            pdf.ln(th)
+            pdf.cell(col_width, th, row[j], border=1)
+        pdf.ln(th)
 
     pdf.ln(10)
 
